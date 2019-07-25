@@ -1,0 +1,23 @@
+{
+  "name": "javascript-unit-testing",
+  "version": "1.0.0",
+  "description": "project to introduce javascript unit testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suabochica/javascript-unit-testing.git"
+  },
+  "keywords": [
+    "unit",
+    "testing"
+  ],
+  "author": "Sergio L. Benítez D.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/suabochica/javascript-unit-testing/issues"
+  },
+  "homepage": "https://github.com/suabochica/javascript-unit-testing#readme"
+}
