@@ -9,7 +9,7 @@
     <script>
         test("pretty date basics", function() {
             function assertDate(then, expected) {
-                equal(prettyDate("2008/01/28 22:25:00", then), expected)
+                equal(calculateDateDifference("2008/01/28 22:25:00", then), expected)
             }
 
             assertDate("2008/01/28 22:24:30", "Just now");
@@ -25,7 +25,7 @@
 
             equal(links[0].innerHTML, "January 28th, 2008");
             equal(links[2].innerHTML, "January 27th, 2008");
-            prettyDate.update("2008-01-28T22:25:00Z");
+            prettyDate.updateDate("2008-01-28T22:25:00Z");
             equal(links[0].innerHTML, "2 hours ago");
             equal(links[2].innerHTML, "Yesterday");
         });
@@ -35,7 +35,7 @@
 
             equal(links[0].innerHTML, "January 28th, 2008");
             equal(links[2].innerHTML, "January 27th, 2008");
-            prettyDate.update("2008-01-28T22:25:00Z");
+            prettyDate.updateDate("2008-01-28T22:25:00Z");
             equal(links[0].innerHTML, "Yesterday");
             equal(links[2].innerHTML, "2 hours ago");
         });
