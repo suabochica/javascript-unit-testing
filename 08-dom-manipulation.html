@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Refactored date examples</title>
+    <link rel="stylesheet" href="qunit.css" />
+    <script src="qunit.js"></script>
+    <script src="08-prettyDate.js"></script>
+    <script>
+        test("pretty date basics", function() {
+            function assertDate(then, expected) {
+                equal(prettyDate("2008/01/28 22:25:00", then), expected)
+            }
+
+            assertDate("2008/01/28 22:24:30", "Just now");
+            assertDate("2008/01/28 22:23:30", "1 minute ago");
+            assertDate("2008/01/28 21:24:30", "1 hour ago");
+            assertDate("2008/01/27 22:23:30", "Yesterday");
+            assertDate("2008/01/26 22:23:30", "2 days ago");
+            assertDate("2007/01/26 22:23:30", undefined);
+        });
+
+        test("prettyDate.update", function() {
+            var links = document.getElementById("qunit-fixture").getElementsByTagName("a");
+
+            equal(links[0].innerHTML, "January 28th, 2008");
+            equal(links[2].innerHTML, "January 27th, 2008");
+            prettyDate.update("2008-01-28T22:25:00Z");
+            equal(links[0].innerHTML, "2 hours ago");
+            equal(links[2].innerHTML, "Yesterday");
+        });
+
+        test("prettyDate.update, one day later", function() {
+            var links = document.getElementById("qunit-fixture").getElementsByTagName("a");
+
+            equal(links[0].innerHTML, "January 28th, 2008");
+            equal(links[2].innerHTML, "January 27th, 2008");
+            prettyDate.update("2008-01-28T22:25:00Z");
+            equal(links[0].innerHTML, "Yesterday");
+            equal(links[2].innerHTML, "2 hours ago");
+        });
+
+
+    </script>
+</head>
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture">
+        <div class="flexwrap">
+            <ul>
+                <li class="post-item" id="post21">
+                    <p>Egan Bernal</p>
+                    <small class="post-info">
+                        Posted <a href="/2019/07/test/21" title="2008-01-28T20:24:17Z">July 24th, 2019</a>
+                        by<a href="/sergio"> Sergio Benítez</a>
+                    </small>
+                </li>
+                <li class="post-item" id="post21">
+                    <p>Rigoberto Urán</p>
+                    <small class="post-info">
+                        Posted <a href="/2019/07/test/21" title="2008-01-28T20:24:17Z">July 24th, 2019</a>
+                        by<a href="/sergio"> Sergio Benítez</a>
+                    </small>
+                </li>
+                <li class="post-item" id="post21">
+                    <p>Nairo Quintana</p>
+                    <small class="post-info">
+                        Posted <a href="/2019/07/test/21" title="2008-01-28T20:24:17Z">July 24th, 2019</a>
+                        by<a href="/sergio"> Sergio Benítez</a>
+                    </small>
+                </li>
+                <!-- More list items -->
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
