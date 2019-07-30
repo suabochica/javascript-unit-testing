@@ -8,7 +8,7 @@ var prettyDate = {
             return;
         }
 
-        return formatDate(dayDiff, diff);
+        return this.formatDate(dayDiff, diff);
     },
 
     formatDate: function(dayDiff, diff) {

@@ -9,7 +9,7 @@
     <script>
         test("pretty date basics", function() {
             function assertDate(then, expected) {
-                equal(calculateDateDifference("2008/01/28 22:25:00", then), expected)
+                equal(prettyDate.calculateDateDifferences("2008/01/28 22:25:00", then), expected)
             }
 
             assertDate("2008/01/28 22:24:30", "Just now");
@@ -23,8 +23,8 @@
         test("prettyDate.update", function() {
             var links = document.getElementById("qunit-fixture").getElementsByTagName("a");
 
-            equal(links[0].innerHTML, "January 28th, 2008");
-            equal(links[2].innerHTML, "January 27th, 2008");
+            equal(links[0].innerHTML, "July 28th, 2008");
+            equal(links[2].innerHTML, "July 27th, 2008");
             prettyDate.updateDate("2008-01-28T22:25:00Z");
             equal(links[0].innerHTML, "2 hours ago");
             equal(links[2].innerHTML, "Yesterday");
@@ -33,9 +33,9 @@
         test("prettyDate.update, one day later", function() {
             var links = document.getElementById("qunit-fixture").getElementsByTagName("a");
 
-            equal(links[0].innerHTML, "January 28th, 2008");
-            equal(links[2].innerHTML, "January 27th, 2008");
-            prettyDate.updateDate("2008-01-28T22:25:00Z");
+            equal(links[0].innerHTML, "July 28th, 2008");
+            equal(links[2].innerHTML, "July 27th, 2008");
+            prettyDate.updateDate("2008-01-29T22:25:00Z");
             equal(links[0].innerHTML, "Yesterday");
             equal(links[2].innerHTML, "2 hours ago");
         });
@@ -51,21 +51,21 @@
                 <li class="post-item" id="post21">
                     <p>Egan Bernal</p>
                     <small class="post-info">
-                        Posted <a href="/2019/07/test/21" title="2008-01-28T20:24:17Z">July 24th, 2019</a>
+                        Posted <a href="/2019/07/test/21" title="2008-01-28T20:24:17Z">July 28th, 2008</a>
                         by<a href="/sergio"> Sergio Benítez</a>
                     </small>
                 </li>
                 <li class="post-item" id="post21">
                     <p>Rigoberto Urán</p>
                     <small class="post-info">
-                        Posted <a href="/2019/07/test/21" title="2008-01-28T20:24:17Z">July 24th, 2019</a>
+                        Posted <a href="/2008/07/test/21" title="2008-01-27T20:24:17Z">July 27th, 2008</a>
                         by<a href="/sergio"> Sergio Benítez</a>
                     </small>
                 </li>
                 <li class="post-item" id="post21">
                     <p>Nairo Quintana</p>
                     <small class="post-info">
-                        Posted <a href="/2019/07/test/21" title="2008-01-28T20:24:17Z">July 24th, 2019</a>
+                        Posted <a href="/2008/07/test/21" title="2008-01-28T20:24:17Z">July 28th, 2008</a>
                         by<a href="/sergio"> Sergio Benítez</a>
                     </small>
                 </li>
