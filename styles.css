@@ -1,0 +1,28 @@
+.flexwrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 14pt;
+}
+
+li {
+    list-style: none;
+    padding: 0 0 1em 0;
+    border-bottom: 2px solid aquamarine;
+}
+
+p {
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+    color: skyblue;
+}
+
+a:hover {
+    color: cadetblue;
+}
