@@ -3,8 +3,9 @@
     <head>
         <meta http-equiv="Content-Type" content="text-htmll charset=UTF-8"/>
         <title>Mangled date examples</title>
+        <link rel="stylesheet" href="styles.css" />
         <script>
-            function prettyDate(now, time) {
+            function calculateDateDifference(now, time) {
                 var date = new Date(time || "");
                 var diff = (((new Date(now)).getTime() - date.getTime())/ 1000);
                 var dayDiff = Math.floor(diff / 86400);
@@ -39,26 +40,26 @@
                 }
             }
 
-window.onload = function() {
-    var links = document.getElementsByTagName("a");
-    for (var i = 0; i < links.length; i++) {
-        if (links[i].title) {
-            var date = prettyDate("2008-01-28T22:25:00Z", links[i].title);
+            window.onload = function() {
+                var links = document.getElementsByTagName("a");
+                for (var i = 0; i < links.length; i++) {
+                    if (links[i].title) {
+                        var date = calculateDateDifference("2019-07-28T22:25:00Z", links[i].title);
 
-            if (date)
-                links[i].innerHTML = date;
-        }
-    }
-} 
+                        if (date)
+                            links[i].innerHTML = date;
+                    }
+                }
+            }
         </script>
     </head>
     <body>
         <div class="flexwrap">
             <ul>
                 <li class="post-item" id="post21">
-                    <p>Test post</p>
+                    <p>Egan Bernal</p>
                     <small class="post-info">
-                        Posted <a href="/2019/07/test/21" title="2008-01-28T20:24:17Z">July 24th, 2019</a>
+                        Posted <a href="/2019/07/test/21" title="2019-07-28T20:24:17Z">July 28th, 2019</a>
                         by<a href="/sergio"> Sergio Benítez</a>
                     </small>
                 </li>

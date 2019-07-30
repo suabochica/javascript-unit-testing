@@ -1,4 +1,4 @@
-function prettyDate(now, time) {
+function calculateDateDifference(now, time) {
     var date = new Date(time || "");
     var diff = (((new Date(now)).getTime() - date.getTime())/ 1000);
     var dayDiff = Math.floor(diff / 86400);

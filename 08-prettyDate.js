@@ -1,5 +1,5 @@
 var prettyDate = {
-    calculateDateDifferences: function(now, time) {
+    calculateDateDifference: function(now, time) {
         var date = new Date(time || "");
         var diff = (((new Date(now)).getTime() - date.getTime())/ 1000);
         var dayDiff = Math.floor(diff / 86400);
@@ -39,7 +39,7 @@ var prettyDate = {
 
         for(var i = 0; i < links.length; i++) {
             if(links[i].title) {
-                var date = prettyDate.calculateDateDifferences(now, links[i].title)
+                var date = prettyDate.calculateDateDifference(now, links[i].title)
 
                 if(date) {
                     links[i].innerHTML = date;
