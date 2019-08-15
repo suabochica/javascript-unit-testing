@@ -60,8 +60,8 @@ TOTAL                        76     10    87%
 Where:
 
 - `Stmts:` Means each statement of the program.
-- `Miss` (optional): Means the statements without coverage.
-- `Cover`: The percentage coverage.
+- `Miss` (optional): Means the statements without coverage.
+- `Cover`: The percentage coverage.
 
 Popular combinations:
 
@@ -69,6 +69,6 @@ Popular combinations:
 - python and [coverage.py](https://coverage.readthedocs.io/en/v4.5.x/#)
 - scala and [JaCoCo](https://www.eclemma.org/jacoco/)
 
-The deadline for this challenge is **September 5th, 2019**. Please deliver this challenge in a github repository with the project and a `README.md` file with setup instructions and the answer of the questions.
+The deadline for this challenge is **September 5th, 2019**. Please deliver this challenge in a github repository with the project and a `README.md` file with setup instructions and the answer of the questions.
 
 Surprise me!
